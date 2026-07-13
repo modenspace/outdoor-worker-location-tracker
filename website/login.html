@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #000000; 
+            font-family: 'Arial', sans-serif;
+            color: rgb(255, 255, 255);
+            margin: 0; 
+            padding-left: 20px; 
+        }
+        h2 {
+            text-align: left;
+            margin-bottom: 20px; 
+        }
+        .login-wrapper {
+            background: #000000; 
+            padding: 40px;
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px; 
+        }
+        input[type="text"], input[type="password"] {
+            margin: 10px 0;
+            font-size: 16px; 
+            padding: 10px; 
+            border: 1px solid #555; 
+            background: #333; 
+            color: white; 
+            border-radius: 4px; /
+        }
+        button {
+            padding: 10px;
+            background-color: #ffffff; 
+            border: none;
+            border-radius: 4px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+            font-family: 'Arial', sans-serif; 
+            font-weight: 500; 
+        }
+        button:hover {
+            background-color: #666; /* Slightly lighter on hover */
+        }
+
+        @media screen and (max-width: 600px){
+            form {
+                width: 100%; 
+            }
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+
+
+
+        // Initialize Firebase
+        firebase.initializeApp({
+                apiKey: "<YOUR_FIREBASE_API_KEY>",
+                authDomain: "<YOUR_FIREBASE_AUTH_DOMAIN>",
+                projectId: "<YOUR_FIREBASE_PROJECT_ID>",
+                storageBucket: "<YOUR_FIREBASE_STORAGE_BUCKET>",
+                messagingSenderId: "<YOUR_FIREBASE_MESSAGING_SENDER_ID>",
+                appId: "<YOUR_FIREBASE_APP_ID>"
+            });
+            var db = firebase.firestore();
+
+
+            window.onload = function() {
+                document.getElementById('loginForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    var username = document.getElementById('uname').value;
+                    var password = document.getElementById('psw').value;
+
+                    firebase.auth().signInWithEmailAndPassword(username, password)
+                        .then((userCredential) => {
+                        // Signed in
+                        var user = userCredential.user;
+                        // user.getIdTokenResult().then(idTokenResult => {
+                        //     if (idTokenResult.claims.admin) {
+                        //         // users is an admin
+                        //         window.location.href = 'main.html';
+                        //     } else {
+                        //         // user is not an admin
+                        //         alert('You are not an admin');
+                        //     }
+                        // });
+                        window.location.href = 'main.html';
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        alert('Invalid username or password');
+                    });
+                });
+            };
+    </script>
+</head>
+<body>
+    <h2>Sign In</h2>
+    <form id="loginForm">
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</body>
+</html>

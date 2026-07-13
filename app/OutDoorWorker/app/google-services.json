@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "98741880802",
+    "project_id": "outdoorworker-f5d96",
+    "storage_bucket": "outdoorworker-f5d96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98741880802:android:763d531bb3b3e4b8511bbb",
+        "android_client_info": {
+          "package_name": "com.example.outdoorworker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98741880802-0622tf9qb6gcm77eodd9ngjl6o7jkop6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.outdoorworker",
+            "certificate_hash": "00b721c9c1d6853f495996141862aed8a51cc25b"
+          }
+        },
+        {
+          "client_id": "98741880802-ipkoh0pf18i20832ua22mrijb8c72178.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7IfzSsDAAJd3UKK6WYDA58S2MBQGT3Mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98741880802-ipkoh0pf18i20832ua22mrijb8c72178.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
