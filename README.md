@@ -70,4 +70,4 @@ The system was evaluated through unit testing and user testing against a set of 
 ## Author
 
 **Abuubakar Mohamed**
-[LinkedIn](linkedin.com/in/abuubakar-mohamed) · [GitHub](https://github.com/modenspace)
+[LinkedIn](https://linkedin.com/in/abuubakar-mohamed) · [GitHub](https://github.com/modenspace)
